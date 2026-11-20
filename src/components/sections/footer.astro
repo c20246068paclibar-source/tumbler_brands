@@ -1,0 +1,22 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<a class="brand footer-brand" href="#top" aria-label="Tumbler Co. home">
+		<img src="/logo.svg" alt="Tumbler Co." width="184" height="44" />
+	</a>
+	<p>Good days, good sips. © {year} Tumbler Co.</p>
+	<a href="#top" class="back-top">Back to top ↑</a>
+</footer>
+
+<style>
+	.site-footer { min-height: 90px; padding: 18px 7.1%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e8e7df; }
+	.footer-brand, .footer-brand img { width: 150px; }
+	.site-footer p, .back-top { color: #68766c; font-size: 9px; }
+	@media (max-width: 560px) {
+		.site-footer { min-height: 100px; padding-inline: 6%; flex-wrap: wrap; gap: 4px 14px; }
+		.footer-brand, .footer-brand img { width: 130px; }
+		.site-footer p { order: 1; width: 100%; margin: 0; }
+	}
+</style>

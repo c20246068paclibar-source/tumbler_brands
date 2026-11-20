@@ -1,0 +1,42 @@
+<div class="announcement">
+	A little more joy in every sip <span aria-hidden="true">✳</span> Free shipping on orders over $50
+</div>
+
+<header class="site-header">
+	<a class="brand" href="#top" aria-label="Tumbler Co. home">
+		<img src="/logo.svg" alt="Tumbler Co." width="184" height="44" />
+	</a>
+	<nav aria-label="Main navigation">
+		<a href="#shop">Shop all</a>
+		<a href="#story">Our story</a>
+		<a href="#process">How it works</a>
+		<a href="#contact">Contact</a>
+	</nav>
+	<a class="bag" href="#shop" aria-label="Shopping bag, 0 items">
+		<span>Bag</span><span class="bag-count" aria-live="polite">0</span>
+	</a>
+</header>
+
+<style>
+	.announcement { min-height: 34px; display: flex; justify-content: center; align-items: center; gap: 9px; background: #29473a; color: #f7f5e9; font-size: 10px; letter-spacing: .075em; }
+	.announcement span { color: #e5b46d; font-size: 13px; }
+	.site-header { position: relative; z-index: 2; height: 78px; padding: 0 7.1%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e8e7df; background: #f8f7f2; }
+	.brand, .brand img { display: block; width: 184px; height: auto; }
+	.site-header nav { display: flex; gap: 30px; margin-left: 32px; }
+	.site-header nav a, .bag { font-size: 11px; font-weight: 500; transition: color .2s ease; }
+	.site-header nav a:hover, .bag:hover { color: #9c6845; }
+	.bag { display: flex; align-items: center; gap: 8px; }
+	.bag-count { width: 22px; height: 22px; display: grid; place-items: center; border: 1px solid #b9c9b9; border-radius: 50%; font-size: 10px; }
+	@media (max-width: 760px) {
+		.site-header { height: 68px; padding-inline: 5%; }
+		.brand, .brand img { width: 155px; }
+		.site-header nav { gap: 16px; margin: 0; }
+		.site-header nav a { font-size: 10px; }
+	}
+	@media (max-width: 560px) {
+		.announcement { padding: 0 8px; font-size: 8px; }
+		.site-header { height: 62px; }
+		.brand, .brand img { width: 136px; }
+		.site-header nav { display: none; }
+	}
+</style>

@@ -1,0 +1,52 @@
+---
+interface Props {
+	name: string;
+	detail: string;
+	price: string;
+	color: "seafoam" | "citrus" | "clay";
+	tag: string;
+}
+
+const { name, detail, price, color, tag } = Astro.props;
+---
+
+<article class="product-card">
+	<div class={`product-art ${color}`} aria-label={`${name} tumbler in ${color}`} role="img">
+		<span class="product-tag">{tag}</span>
+		<span class="product-sun"></span>
+		<span class="product-cup">
+			<span class="product-straw"></span><span class="product-lid"></span>
+			<span class="product-body"><span class="product-mark">t<span>✳</span></span></span>
+			<span class="product-base"></span>
+		</span>
+	</div>
+	<div class="product-info">
+		<div><h3>{name}</h3><p>{detail}</p></div><span class="product-price">{price}</span>
+	</div>
+	<button class="add-button" type="button" data-product={name}>Add to bag <span aria-hidden="true">+</span></button>
+</article>
+
+<style>
+	.product-art { position: relative; height: 300px; display: grid; place-items: center; overflow: hidden; }
+	.seafoam { background: #e7eee5; --cup: #a8c1a8; --lid-color: #f6f1e5; --disc: #d3e1cf; }
+	.citrus { background: #f1eadb; --cup: #e5b968; --lid-color: #f7f0dc; --disc: #e7d8b8; }
+	.clay { background: #efe5dc; --cup: #ca9073; --lid-color: #f5eee4; --disc: #e4d3c4; }
+	.product-tag { position: absolute; z-index: 2; top: 16px; left: 16px; color: #68766b; font-size: 8px; letter-spacing: .13em; }
+	.product-sun { position: absolute; width: 190px; height: 190px; top: 42px; left: 50%; transform: translateX(-50%); border-radius: 50%; background: var(--disc); }
+	.product-cup { position: relative; z-index: 1; width: 111px; height: 213px; margin-top: 24px; filter: drop-shadow(10px 13px 8px rgba(58,62,47,.15)); }
+	.product-straw { position: absolute; top: -27px; left: 54px; width: 6px; height: 71px; border-radius: 5px; background: color-mix(in srgb, var(--cup), #54755c 28%); }
+	.product-lid { position: absolute; top: 25px; left: 4px; width: 103px; height: 24px; border-radius: 9px 9px 6px 6px; background: var(--lid-color); }
+	.product-body { position: absolute; top: 44px; left: 9px; width: 93px; height: 157px; display: grid; place-items: center; border-radius: 9px 9px 20px 20px; background: linear-gradient(95deg, color-mix(in srgb, var(--cup), #fff 9%), var(--cup) 55%, color-mix(in srgb, var(--cup), #365b42 10%)); }
+	.product-mark { color: #536e54; font-family: var(--font-display), Georgia, serif; font-size: 36px; }
+	.product-mark span { color: #bb7952; font-family: var(--font-sans), sans-serif; font-size: 12px; vertical-align: 10px; }
+	.product-base { position: absolute; bottom: 4px; left: 17px; width: 78px; height: 10px; border-radius: 50%; background: rgba(64,75,53,.13); }
+	.product-info { display: flex; justify-content: space-between; align-items: start; padding: 16px 1px 12px; }
+	.product-info h3 { margin: 0 0 5px; font-family: var(--font-display), Georgia, serif; font-size: 18px; font-weight: 400; }
+	.product-info p { margin: 0; color: #68766c; font-size: 9px; }
+	.product-price { padding-top: 3px; font-size: 11px; }
+	.add-button { width: 100%; height: 39px; display: flex; justify-content: space-between; align-items: center; padding: 0 13px; border: 1px solid #d6dbd2; background: transparent; color: #43584a; font: inherit; font-size: 10px; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+	.add-button:hover { border-color: #29473a; background: #29473a; color: white; }
+	.add-button span { font-size: 16px; }
+	@media (max-width: 760px) { .product-art { height: 245px; } }
+	@media (max-width: 560px) { .product-art { height: 300px; } }
+</style>

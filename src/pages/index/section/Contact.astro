@@ -1,9 +1,21 @@
+---
+const supportEmail = "hello@tumblerco.com";
+---
+
 <section class="contact" id="contact" aria-labelledby="contact-title">
 	<div class="contact-copy">
 		<p class="eyebrow">WE’RE ALL EARS</p>
 		<h2 id="contact-title">Questions?<br /><em>Let’s talk.</em></h2>
 		<p>Need a hand choosing your tumbler, or have a question about an order? Send us a note and we’ll point you in the right direction.</p>
-		<a class="contact-link" href="mailto:hello@tumblerco.com">hello@tumblerco.com <span aria-hidden="true">↗</span></a>
+		<form class="contact-form" data-recipient={supportEmail}>
+			<label for="contact-email">Your email</label>
+			<input id="contact-email" name="email" type="email" autocomplete="email" required />
+			<label for="contact-message">Message</label>
+			<textarea id="contact-message" name="message" rows="5" required></textarea>
+			<button type="submit">Send message <span aria-hidden="true">↗</span></button>
+		</form>
+		<p class="form-note">Your email app will open with your message ready to send.</p>
+		<a class="contact-link" href={`mailto:${supportEmail}`}>{supportEmail} <span aria-hidden="true">↗</span></a>
 		<small>Demo contact address — replace it with your store’s support email.</small>
 	</div>
 	<div class="contact-note" aria-hidden="true">
@@ -13,6 +25,23 @@
 	</div>
 </section>
 
+<script>
+	const form = document.querySelector<HTMLFormElement>(".contact-form");
+
+	form?.addEventListener("submit", (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(form);
+		const email = String(formData.get("email"));
+		const message = String(formData.get("message"));
+		const recipient = form.dataset.recipient;
+		const body = `Reply to: ${email}\n\n${message}`;
+		const subject = encodeURIComponent("Message from Tumbler Co. website");
+
+		window.location.href = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(body)}`;
+	});
+</script>
+
 <style>
 	.contact { display: grid; grid-template-columns: 1fr .8fr; align-items: center; gap: 8%; padding: 82px 14%; background: #e7eee5; }
 	.contact-copy { max-width: 410px; }
@@ -20,6 +49,14 @@
 	h2 { margin: 0; font-family: var(--font-display), Georgia, serif; font-size: clamp(42px, 5vw, 58px); font-weight: 400; letter-spacing: -.045em; line-height: 1.02; }
 	h2 em { color: #bc7954; font-weight: 400; }
 	.contact-copy > p:not(.eyebrow) { margin: 18px 0 19px; color: #68766c; font-size: 11px; line-height: 1.85; }
+	.contact-form { display: grid; gap: 8px; }
+	.contact-form label { margin-top: 5px; color: #43584a; font-size: 10px; font-weight: 600; }
+	.contact-form input, .contact-form textarea { width: 100%; padding: 10px 11px; border: 1px solid #c5d0c3; border-radius: 0; background: #f8f7f2; color: #233a32; font: inherit; font-size: 11px; }
+	.contact-form textarea { min-height: 110px; resize: vertical; }
+	.contact-form button { min-height: 42px; display: flex; justify-content: space-between; align-items: center; margin-top: 5px; padding: 0 13px; border: 1px solid #29473a; background: #29473a; color: #f7f5e9; font: inherit; font-size: 10px; cursor: pointer; transition: background .2s, color .2s; }
+	.contact-form button:hover { background: transparent; color: #29473a; }
+	.contact-form button span { font-size: 15px; }
+	.form-note { margin: 9px 0 0; color: #68766c; font-size: 9px; line-height: 1.6; }
 	.contact-link { display: inline-flex; align-items: center; gap: 14px; padding-bottom: 6px; border-bottom: 1px solid #95a494; color: #29473a; font-size: 12px; font-weight: 600; }
 	.contact-link span { font-size: 15px; }
 	small { display: block; margin-top: 9px; color: #78877a; font-size: 9px; }
