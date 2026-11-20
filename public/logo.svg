@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" fill="none" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Tumbler Co. — Good days, good sips</title>
+  <rect x="1" y="1" width="62" height="62" rx="20" fill="#29473A"/>
+  <defs>
+    <clipPath id="tumbler-body">
+      <path d="M22 23h20l-2.6 27.1a4 4 0 0 1-4 3.6h-6.8a4 4 0 0 1-4-3.6L22 23Z"/>
+    </clipPath>
+  </defs>
+  <path d="M22 23h20l-2.6 27.1a4 4 0 0 1-4 3.6h-6.8a4 4 0 0 1-4-3.6L22 23Z" fill="#F8F7F2"/>
+  <path d="M19 19a4 4 0 0 1 4-4h18a4 4 0 0 1 4 4v4H19v-4Z" fill="#D6E4D3"/>
+  <path d="M32 15V9a2 2 0 0 1 4 0v6" stroke="#E3B77E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M21 37c4.5-4 8.5-4 12.5 0s7 4 10.1 1.6l-1.2 12a4 4 0 0 1-4 3.7h-12a4 4 0 0 1-4-3.7L21 37Z" fill="#A8C1A8" clip-path="url(#tumbler-body)"/>
+  <path d="M43 29v5m-2.5-2.5h5" stroke="#BC7954" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="79" y="35" fill="#29473A" font-family="Georgia, 'Times New Roman', serif" font-size="28" letter-spacing="-.7">tumbler co.</text>
+  <text x="81" y="51" fill="#718075" font-family="Arial, sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.5">GOOD DAYS, GOOD SIPS</text>
+</svg>

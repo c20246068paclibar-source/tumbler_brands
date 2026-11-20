@@ -1,0 +1,72 @@
+<section class="hero" aria-labelledby="hero-title">
+	<div class="hero-copy">
+		<p class="eyebrow"><span class="eyebrow-dot"></span> MEET YOUR NEW EVERYDAY</p>
+		<h1 id="hero-title">Good days<br />start with a<br /><em>good sip.</em></h1>
+		<p class="hero-description">The feel-good tumbler that goes where you go. Thoughtfully made, easy to love, and always ready for a refill.</p>
+		<a class="button button-dark" href="#shop">Find your favorite <span aria-hidden="true">↗</span></a>
+		<div class="hero-note"><span class="mini-stars" aria-hidden="true">✳ ✳ ✳ ✳ ✳</span><span>Loved for the long haul</span></div>
+	</div>
+
+	<div class="hero-art" aria-label="A seafoam green Tumbler Co. reusable cup" role="img">
+		<div class="sun-disc"></div>
+		<span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+		<span class="art-spark spark-one" aria-hidden="true">✳</span><span class="art-spark spark-two" aria-hidden="true">✳</span>
+		<div class="hero-cup">
+			<div class="hero-straw"></div>
+			<div class="hero-lid"></div>
+			<div class="hero-cup-body"><span class="cup-logo">t<span>✳</span></span><span class="cup-wordmark">TUMBLER CO.</span></div>
+			<div class="hero-cup-base"></div>
+		</div>
+		<div class="floating-note"><span class="note-icon">↗</span><span>Made for<br /><strong>your kind of day</strong></span></div>
+		<span class="art-caption">01 / THE EVERYDAY</span>
+	</div>
+</section>
+
+<style>
+	.hero { min-height: 610px; display: grid; grid-template-columns: 1fr 1.03fr; gap: 6%; align-items: center; padding: 60px 11.6% 72px 13.2%; overflow: hidden; }
+	.hero-copy { position: relative; z-index: 1; padding-bottom: 3px; }
+	.eyebrow { margin: 0 0 20px; color: #76847a; font-size: 9px; font-weight: 700; letter-spacing: .16em; }
+	.eyebrow-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #dfab69; vertical-align: 1px; }
+	h1 { margin: 0; font-family: var(--font-display), Georgia, serif; font-size: clamp(56px, 6.1vw, 81px); font-weight: 400; letter-spacing: -.045em; line-height: .99; }
+	h1 em { color: #bc7954; font-weight: 400; }
+	.hero-description { max-width: 360px; margin: 22px 0 26px; color: #68756c; font-size: 13px; line-height: 1.85; }
+	.button { display: inline-flex; min-height: 47px; align-items: center; justify-content: center; gap: 25px; padding: 0 21px; font-size: 11px; font-weight: 600; transition: transform .2s ease, background .2s ease; }
+	.button:hover { transform: translateY(-2px); }
+	.button-dark { background: #29473a; color: white; }
+	.button-dark:hover { background: #1d382d; }
+	.hero-note { display: flex; align-items: center; gap: 11px; margin-top: 37px; color: #7d887f; font-size: 10px; }
+	.mini-stars { color: #cf9960; letter-spacing: 3px; font-size: 11px; }
+	.hero-art { position: relative; min-height: 470px; background: #e7eee5; overflow: hidden; display: grid; place-items: center; }
+	.sun-disc { position: absolute; width: 310px; height: 310px; top: 57px; left: 50%; transform: translateX(-50%); border-radius: 50%; background: #d3e1cf; }
+	.orbit { position: absolute; width: 385px; height: 385px; top: 20px; left: 50%; border: 1px solid rgba(66, 104, 79, .13); border-radius: 50%; transform: translateX(-50%); }
+	.orbit-two { width: 450px; height: 450px; top: -13px; border-color: rgba(66, 104, 79, .09); }
+	.art-spark { position: absolute; color: #b57c53; }
+	.spark-one { top: 65px; left: 19%; font-size: 24px; }
+	.spark-two { top: 142px; right: 15%; color: #7b997a; font-size: 17px; }
+	.hero-cup { position: relative; z-index: 1; width: 174px; height: 336px; margin-top: 24px; filter: drop-shadow(18px 22px 14px rgba(44, 71, 57, .15)); }
+	.hero-straw { position: absolute; z-index: -1; top: -45px; left: 84px; width: 9px; height: 102px; border-radius: 6px; background: #76917a; transform: rotate(4deg); }
+	.hero-lid { position: absolute; top: 35px; left: 7px; width: 160px; height: 34px; border-radius: 12px 12px 8px 8px; background: linear-gradient(180deg, #f8f3e7 0%, #e8e2d4 100%); box-shadow: inset 0 5px 0 rgba(255,255,255,.55); }
+	.hero-cup-body { position: absolute; top: 60px; left: 13px; width: 148px; height: 252px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 13px 13px 29px 29px; background: linear-gradient(95deg, #9fbda0, #b5cbb0 38%, #a9c2a8 75%, #91b194); box-shadow: inset 9px 0 12px rgba(255,255,255,.12), inset -10px 0 14px rgba(45,83,59,.08); }
+	.cup-logo { font-family: var(--font-display), Georgia, serif; font-size: 46px; line-height: 1; color: #395943; }
+	.cup-logo span { margin-left: 3px; color: #c17d54; font-family: var(--font-sans), sans-serif; font-size: 17px; vertical-align: 13px; }
+	.cup-wordmark { margin-top: 6px; color: #54745a; font-size: 6px; letter-spacing: .19em; }
+	.hero-cup-base { position: absolute; left: 24px; bottom: 17px; width: 126px; height: 17px; border-radius: 50%; background: rgba(64,101,70,.15); }
+	.floating-note { position: absolute; right: 7%; bottom: 69px; display: flex; align-items: center; gap: 11px; padding: 13px 15px; background: #f9f8f1; box-shadow: 0 8px 24px rgba(46,66,50,.08); color: #7c857c; font-size: 9px; line-height: 1.7; }
+	.floating-note strong { color: #29473a; font-weight: 600; }
+	.note-icon { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 50%; background: #ead9c4; color: #8e6548; font-size: 13px; }
+	.art-caption { position: absolute; bottom: 22px; left: 25px; color: #87958a; font-size: 8px; letter-spacing: .15em; }
+	@media (max-width: 760px) {
+		.hero { grid-template-columns: 1fr 1fr; gap: 3%; padding: 48px 6% 52px; min-height: 520px; }
+		.hero-art { min-height: 390px; }
+		.hero-cup { transform: scale(.82); }
+		.floating-note { right: 4%; bottom: 46px; }
+	}
+	@media (max-width: 560px) {
+		.hero { grid-template-columns: 1fr; padding: 46px 7% 36px; gap: 32px; }
+		h1 { font-size: 64px; }
+		.hero-description { max-width: 320px; }
+		.hero-note { margin-top: 22px; }
+		.hero-art { min-height: 380px; }
+		.hero-cup { transform: scale(.88); }
+	}
+</style>

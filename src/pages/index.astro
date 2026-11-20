@@ -1,16 +1,137 @@
 ---
+import About from "./index/section/About.astro";
+import Contact from "./index/section/Contact.astro";
+import Hero from "./index/section/Hero.astro";
+import Process from "./index/section/Process.astro";
+import Projects from "./index/section/Projects.astro";
+import Services from "./index/section/Services.astro";
 ---
 
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="theme-color" content="#f8f7f2" />
+		<meta name="description" content="Thoughtfully made tumblers for wherever the day takes you. Meet your new everyday favorite from Tumbler Co." />
+		<title>Tumbler Co. — Good days, good sips</title>
 	</head>
-	<body>
-		<h1>nica</h1>
+	<body id="top">
+		<div class="announcement">A little more joy in every sip <span aria-hidden="true">✳</span> Free shipping on orders over $50</div>
+
+		<header class="site-header">
+			<a class="brand" href="#top" aria-label="Tumbler Co. home">
+				<img src="/logo.svg" alt="Tumbler Co." width="184" height="44" />
+			</a>
+			<nav aria-label="Main navigation">
+				<a href="#shop">Shop all</a>
+				<a href="#story">Our story</a>
+				<a href="#process">How it works</a>
+				<a href="#contact">Contact</a>
+			</nav>
+			<a class="bag" href="#shop" aria-label="Shopping bag, 0 items">
+				<span>Bag</span><span class="bag-count" aria-live="polite">0</span>
+			</a>
+		</header>
+
+		<main>
+			<Hero />
+			<Services />
+			<Projects />
+			<Process />
+			<About />
+			<Contact />
+			<section class="closing-note">
+				<span class="closing-star" aria-hidden="true">✳</span>
+				<p>Here’s to wherever today takes you.</p>
+				<a href="#shop">Take a tumbler along <span aria-hidden="true">↗</span></a>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<a class="brand footer-brand" href="#top" aria-label="Tumbler Co. home"><img src="/logo.svg" alt="Tumbler Co." width="184" height="44" /></a>
+			<p>Good days, good sips. © 2026 Tumbler Co.</p>
+			<a href="#top" class="back-top">Back to top ↑</a>
+		</footer>
+
+		<div class="toast" role="status" aria-live="polite"></div>
+
+		<script>
+			let bagCount = 0;
+			const bag = document.querySelector(".bag");
+			const count = document.querySelector(".bag-count");
+			const toast = document.querySelector(".toast");
+			let toastTimer: ReturnType<typeof setTimeout>;
+
+			document.querySelectorAll<HTMLButtonElement>(".add-button").forEach((button) => {
+				button.addEventListener("click", () => {
+					bagCount += 1;
+					count!.textContent = String(bagCount);
+					bag!.setAttribute("aria-label", `Shopping bag, ${bagCount} ${bagCount === 1 ? "item" : "items"}`);
+					toast!.textContent = `${button.dataset.product} added to your bag`;
+					toast!.classList.add("show");
+					clearTimeout(toastTimer);
+					toastTimer = setTimeout(() => toast!.classList.remove("show"), 2200);
+				});
+			});
+		</script>
 	</body>
 </html>
+
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+
+	:global(:root) {
+		--font-display: "DM Serif Display";
+		--font-sans: "DM Sans";
+		font-family: var(--font-sans), sans-serif;
+		color: #233a32;
+		background: #f8f7f2;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+	}
+	:global(*) { box-sizing: border-box; }
+	:global(html) { scroll-behavior: smooth; }
+	:global(body) { min-width: 320px; margin: 0; }
+	:global(a) { color: inherit; text-decoration: none; }
+	:global(:focus-visible) { outline: 2px solid #bc7954; outline-offset: 4px; }
+	.announcement { min-height: 34px; display: flex; justify-content: center; align-items: center; gap: 9px; background: #29473a; color: #f7f5e9; font-size: 10px; letter-spacing: .075em; }
+	.announcement span { color: #e5b46d; font-size: 13px; }
+	.site-header { position: relative; z-index: 2; height: 78px; padding: 0 7.1%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e8e7df; background: #f8f7f2; }
+	.brand, .brand img { display: block; width: 184px; height: auto; }
+	.site-header nav { display: flex; gap: 30px; margin-left: 32px; }
+	.site-header nav a, .bag { font-size: 11px; font-weight: 500; transition: color .2s ease; }
+	.site-header nav a:hover, .bag:hover { color: #9c6845; }
+	.bag { display: flex; align-items: center; gap: 8px; }
+	.bag-count { width: 22px; height: 22px; display: grid; place-items: center; border: 1px solid #b9c9b9; border-radius: 50%; font-size: 10px; }
+	.closing-note { min-height: 169px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 9px; text-align: center; }
+	.closing-star { color: #bd8055; font-size: 18px; }
+	.closing-note p { margin: 0; font-family: var(--font-display), Georgia, serif; font-size: 22px; }
+	.closing-note a { color: #68766c; font-size: 9px; }
+	.closing-note a span { margin-left: 4px; font-size: 15px; }
+	.site-footer { min-height: 90px; padding: 18px 7.1%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e8e7df; }
+	.footer-brand, .footer-brand img { width: 150px; }
+	.site-footer p, .back-top { color: #68766c; font-size: 9px; }
+	.toast { position: fixed; z-index: 5; right: 24px; bottom: 24px; padding: 13px 19px; background: #29473a; color: white; font-size: 11px; opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .2s, transform .2s; }
+	.toast.show { opacity: 1; transform: translateY(0); }
+	@media (max-width: 760px) {
+		.site-header { height: 68px; padding-inline: 5%; }
+		.brand, .brand img { width: 155px; }
+		.site-header nav { gap: 16px; margin: 0; }
+		.site-header nav a { font-size: 10px; }
+	}
+	@media (max-width: 560px) {
+		.announcement { padding: 0 8px; font-size: 8px; }
+		.site-header { height: 62px; }
+		.brand, .brand img { width: 136px; }
+		.site-header nav { display: none; }
+		.site-footer { min-height: 100px; padding-inline: 6%; flex-wrap: wrap; gap: 4px 14px; }
+		.footer-brand, .footer-brand img { width: 130px; }
+		.site-footer p { order: 1; width: 100%; margin: 0; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		:global(*), :global(*::before), :global(*::after) { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+	}
+</style>

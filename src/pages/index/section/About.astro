@@ -1,0 +1,36 @@
+<section class="about" id="story" aria-labelledby="about-title">
+	<div class="about-art" aria-hidden="true">
+		<div class="about-sun"></div><span class="about-star star-a">✳</span><span class="about-star star-b">✳</span>
+		<div class="about-message">A little<br />less single-use.<br /><em>A lot more</em><br />you-time.</div>
+		<span class="about-stamp">GOOD THINGS<br />GO ROUND</span>
+	</div>
+	<div class="about-copy">
+		<p class="eyebrow">SMALL SWITCH, BIG FEELING</p>
+		<h2 id="about-title">Made for the<br />long way <em>round.</em></h2>
+		<p>We think the things you use every day should feel a little special. So we made a tumbler that keeps up, cleans up, and makes your favorite little rituals even better.</p>
+		<a class="button button-outline" href="#shop">Meet the collection <span aria-hidden="true">↗</span></a>
+	</div>
+</section>
+
+<style>
+	.about { min-height: 445px; display: grid; grid-template-columns: 1fr 1fr; background: #f0eee6; }
+	.about-art { position: relative; min-height: 445px; display: grid; place-items: center; overflow: hidden; background: #e7e9dc; }
+	.about-sun { position: absolute; width: 280px; height: 280px; border-radius: 50%; background: #dddcc8; }
+	.about-message { position: relative; z-index: 1; color: #38503f; font-family: var(--font-display), Georgia, serif; font-size: clamp(35px, 4vw, 51px); letter-spacing: -.04em; line-height: 1.08; text-align: center; }
+	.about-message em { color: #ad7656; font-weight: 400; }
+	.about-star { position: absolute; z-index: 1; color: #b77c52; }
+	.star-a { top: 20%; left: 23%; font-size: 23px; }
+	.star-b { right: 22%; bottom: 21%; color: #71896d; font-size: 18px; }
+	.about-stamp { position: absolute; right: 8%; top: 12%; width: 67px; height: 67px; display: grid; place-items: center; border: 1px solid #a8b09d; border-radius: 50%; color: #687869; font-size: 7px; letter-spacing: .1em; line-height: 1.5; text-align: center; transform: rotate(10deg); }
+	.about-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 60px 12%; }
+	.eyebrow { margin: 0 0 17px; color: #76847a; font-size: 9px; font-weight: 700; letter-spacing: .16em; }
+	h2 { margin: 0 0 18px; font-family: var(--font-display), Georgia, serif; font-size: clamp(38px, 4vw, 51px); font-weight: 400; letter-spacing: -.04em; line-height: 1.05; }
+	h2 em { color: #bc7954; font-weight: 400; }
+	.about-copy > p:not(.eyebrow) { max-width: 360px; margin: 0 0 25px; color: #68766c; font-size: 11px; line-height: 1.9; }
+	.button { display: inline-flex; min-height: 47px; align-items: center; justify-content: center; gap: 25px; padding: 0 21px; font-size: 11px; font-weight: 600; transition: transform .2s ease, background .2s ease; }
+	.button:hover { transform: translateY(-2px); }
+	.button-outline { border: 1px solid #b8c0b5; color: #405547; }
+	.button-outline:hover { background: #e5e4d9; }
+	@media (max-width: 760px) { .about-copy { padding-inline: 8%; } }
+	@media (max-width: 560px) { .about { grid-template-columns: 1fr; } .about-art { min-height: 350px; } .about-copy { min-height: 340px; padding: 48px 9%; } }
+</style>

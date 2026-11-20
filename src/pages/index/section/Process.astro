@@ -1,0 +1,29 @@
+<section class="process" id="process" aria-labelledby="process-title">
+	<div class="process-heading">
+		<p class="eyebrow">A LITTLE RITUAL GOES A LONG WAY</p>
+		<h2 id="process-title">Your day, in <em>three easy sips.</em></h2>
+		<p>Finding your fit is simple. The good part is taking it with you.</p>
+	</div>
+	<ol class="steps">
+		<li><span class="step-number">01</span><span class="step-icon" aria-hidden="true">⌕</span><h3>Find your fit</h3><p>Choose the size and style that feels right for your everyday.</p></li>
+		<li><span class="step-number">02</span><span class="step-icon" aria-hidden="true">↗</span><h3>Fill and head out</h3><p>Bring your favorite drink along for the ride, the desk, or the long way home.</p></li>
+		<li><span class="step-number">03</span><span class="step-icon" aria-hidden="true">✳</span><h3>Rinse and repeat</h3><p>Give your tumbler a clean and make room for tomorrow’s first sip.</p></li>
+	</ol>
+</section>
+
+<style>
+	.process { padding: 82px 11.5% 90px; background: #29473a; color: #f8f7f2; }
+	.process-heading { text-align: center; }
+	.eyebrow { margin: 0 0 14px; color: #c4cfbf; font-size: 9px; font-weight: 700; letter-spacing: .16em; }
+	h2 { margin: 0; font-family: var(--font-display), Georgia, serif; font-size: clamp(36px, 4vw, 48px); font-weight: 400; letter-spacing: -.04em; line-height: 1.1; }
+	h2 em { color: #e2b27a; font-weight: 400; }
+	.process-heading > p:last-child { margin: 13px 0 0; color: #d3ddd2; font-size: 11px; }
+	.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 49px 0 0; padding: 0; list-style: none; }
+	.steps li { position: relative; min-height: 160px; padding: 24px 23px 20px; border: 1px solid rgba(241,245,236,.2); }
+	.step-number { position: absolute; top: 17px; right: 17px; color: #c4cfbf; font-size: 8px; letter-spacing: .12em; }
+	.step-icon { display: grid; width: 34px; height: 34px; place-items: center; margin-bottom: 16px; border-radius: 50%; background: #e2b27a; color: #29473a; font-size: 18px; }
+	.steps h3 { margin: 0 0 8px; font-family: var(--font-display), Georgia, serif; font-size: 17px; font-weight: 400; }
+	.steps p { margin: 0; color: #d3ddd2; font-size: 10px; line-height: 1.75; }
+	@media (max-width: 760px) { .process { padding: 65px 7%; } .steps { gap: 14px; } .steps li { padding: 20px 15px; } }
+	@media (max-width: 560px) { .process { padding: 54px 7%; } .steps { grid-template-columns: 1fr; gap: 12px; margin-top: 30px; } .steps li { min-height: 0; } }
+</style>
